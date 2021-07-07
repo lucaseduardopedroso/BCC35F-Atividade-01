@@ -23,7 +23,7 @@ void display(void){
     glLoadIdentity();
 
    //Para translação em 2D, coloque tz=0.
-    glTranslatef(xt, xt, 0);
+    glTranslatef(xt, yt, 0);
     glTranslatef(5, 5, 0);
    //Para a escala 2D, coloque sz=1
     glScaled(xs, xs, 1);
@@ -32,7 +32,7 @@ void display(void){
     glTranslatef(-5, -5, 0);
 
     glColor3f(1,0,0);
-    
+
     //O programa ao executar deve mostrar um quadrado vermelho de lado 10 alinhado ao canto inferior esquerdo da janela//
      glBegin(GL_QUADS);
         glVertex2f(10.0, 10.0);
@@ -65,11 +65,11 @@ void KeyboardFunc(unsigned char key, int x, int y){
 void PressedKey(int key, int x, int y){
     switch (tec) {
             //As teclas do teclado ← e → devem alterar o ângulo de rotação θ adequadamente. Adotando-se o centroide do quadrado como ponto de rotação, considerando-se eventuais transformações geométricas que ele possa ter sofrido anteriormente//
-            case 'r'://Rota��o para a direita//
+            case 'r'://Rotacao para a direita//
                      if(key == GLUT_KEY_RIGHT){
                         yr--;
                      }
-                     //Rota��o para a esquerda//
+                     //Rotacao para a esquerda//
                      else if(key == GLUT_KEY_LEFT){
                         yr++;
                      }
@@ -110,10 +110,10 @@ int main(int argc, char** argv) {
 
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB);
-    //A janela do OpenGL deve ter 500 � 500 de tamanho//
+    //A janela do OpenGL deve ter 500 x 500 de tamanho//
     glutInitWindowSize(500,500);
     glutInitWindowPosition(0,0);
-    glutCreateWindow("Atividade Pr�tica 1");
+    glutCreateWindow("Atividade Pratica 1");
     glutKeyboardFunc(KeyboardFunc);
     glutSpecialFunc(PressedKey);
     init();
